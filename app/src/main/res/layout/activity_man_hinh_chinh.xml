@@ -158,7 +158,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="hero"
                 android:scaleType="fitCenter"
-                android:src="@drawable/cholongtrang" />
+                android:src="@drawable/herdoghome" />
         </FrameLayout>
 
         <!-- PRODUCT TITLE -->
@@ -205,41 +205,46 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/imgPet1"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:contentDescription="pet1"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongtrang" />
+                    android:src="@null" />
 
                 <TextView
+                    android:id="@+id/txtTenPet1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="MO231 - Pomeranian Trang"
+                    android:text=""
                     android:textColor="#222222"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtGiongPet1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Giong: Duc"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtTuoiPet1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tuoi: 02 thang"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtGiaPet1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="6.900.000 VND"
+                    android:text=""
                     android:textColor="#0B3B68"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -258,41 +263,46 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/imgPet2"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:contentDescription="pet2"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongnau" />
+                    android:src="@null" />
 
                 <TextView
+                    android:id="@+id/txtTenPet2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="MO502 - Poodle Tiny Vang"
+                    android:text=""
                     android:textColor="#222222"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtGiongPet2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Giong: Cai"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtTuoiPet2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tuoi: 02 thang"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtGiaPet2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="3.900.000 VND"
+                    android:text=""
                     android:textColor="#0B3B68"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -311,41 +321,46 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/imgPet3"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:contentDescription="pet3"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongtrang" />
+                    android:src="@null" />
 
                 <TextView
+                    android:id="@+id/txtTenPet3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="MO102 - Poodle Tiny Sepia"
+                    android:text=""
                     android:textColor="#222222"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtGiongPet3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Giong: Duc"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtTuoiPet3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tuoi: 02 thang"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtGiaPet3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="4.000.000 VND"
+                    android:text=""
                     android:textColor="#0B3B68"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -364,41 +379,46 @@
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/imgPet4"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:contentDescription="pet4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongnau" />
+                    android:src="@null" />
 
                 <TextView
+                    android:id="@+id/txtTenPet4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="MO512 - Alaskan Malamute"
+                    android:text=""
                     android:textColor="#222222"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtGiongPet4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Giong: Duc"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtTuoiPet4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tuoi: 03 thang"
+                    android:text=""
                     android:textColor="#777777"
                     android:textSize="10sp" />
 
                 <TextView
+                    android:id="@+id/txtGiaPet4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="8.900.000 VND"
+                    android:text=""
                     android:textColor="#0B3B68"
                     android:textSize="12sp"
                     android:textStyle="bold" />

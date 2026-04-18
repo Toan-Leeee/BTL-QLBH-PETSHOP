@@ -259,7 +259,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chia sáº»:"
+                    android:text="Chia sẻ"
                     android:textColor="#0B3B68"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -299,7 +299,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
-            android:text="CÃ³ gÃ¬ má»›i?"
+            android:text="Có gì mới"
             android:textColor="#6B7280"
             android:textSize="12sp" />
 
@@ -308,7 +308,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="Xem ThÃªm ChÃ³ Con"
+            android:text="Xem Thêm thú cưng"
             android:textColor="#0B3B68"
             android:textSize="18sp"
             android:textStyle="bold" />

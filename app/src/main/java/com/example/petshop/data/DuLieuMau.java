@@ -24,24 +24,24 @@ public final class DuLieuMau {
     }
 
     private static void khoiTaoSanPham() {
-        DS_SAN_PHAM.add(new SanPham("MO231", "Pomeranian Trang", "Duc", "02 thang", 6900000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO502", "Poodle Tiny Vang", "Cai", "02 thang", 3900000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO102", "Poodle Tiny Sepia", "Duc", "02 thang", 4000000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO512", "Alaskan Malamute", "Duc", "03 thang", 8900000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO777", "Corgi Vang Trang", "Cai", "02 thang", 7200000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO888", "Husky Xam Trang", "Duc", "03 thang", 8500000, R.drawable.cholongnau));
+        DS_SAN_PHAM.add(new SanPham("MO231", "Pomeranian Trang", "Duc", "02 thang", 6900000, R.drawable.mo231_pomeranian_trang));
+        DS_SAN_PHAM.add(new SanPham("MO502", "Poodle Tiny Vang", "Cai", "02 thang", 3900000, R.drawable.mo502_poodle_tiny_vang));
+        DS_SAN_PHAM.add(new SanPham("MO102", "Poodle Tiny Sepia", "Duc", "02 thang", 4000000, R.drawable.mo512_poodle_tiny));
+        DS_SAN_PHAM.add(new SanPham("MO512", "Alaskan Malamute", "Duc", "03 thang", 8900000, R.drawable.mo512_alaskan_malamute));
+        DS_SAN_PHAM.add(new SanPham("MO777", "Corgi Vang Trang", "Cai", "02 thang", 7200000, R.drawable.mo231_pembroke_corgi));
+        DS_SAN_PHAM.add(new SanPham("MO888", "Husky Xam Trang", "Duc", "03 thang", 8500000, R.drawable.cholongtrang));
         DS_SAN_PHAM.add(new SanPham("MO901", "French Bulldog Kem", "Duc", "02 thang", 7600000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO902", "Shiba Inu Do", "Cai", "03 thang", 8300000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO903", "Samoyed Trang", "Duc", "03 thang", 9100000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO904", "Pug Den", "Cai", "02 thang", 5200000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO905", "Beagle Ba Mau", "Duc", "02 thang", 6100000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO906", "Chihuahua Nau", "Cai", "02 thang", 4700000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO907", "Golden Retriever", "Duc", "03 thang", 9400000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO908", "Yorkshire Terrier", "Cai", "02 thang", 5800000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO909", "Boston Terrier", "Duc", "02 thang", 6900000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO910", "Dachshund Nau", "Cai", "03 thang", 5600000, R.drawable.cholongnau));
-        DS_SAN_PHAM.add(new SanPham("MO911", "Border Collie", "Duc", "03 thang", 9700000, R.drawable.cholongtrang));
-        DS_SAN_PHAM.add(new SanPham("MO912", "Papillon Mini", "Cai", "02 thang", 5400000, R.drawable.cholongnau));
+        DS_SAN_PHAM.add(new SanPham("MO902", "Shiba Inu Do", "Cai", "03 thang", 8300000, R.drawable.cholongnau));
+        DS_SAN_PHAM.add(new SanPham("MO903", "Samoyed Trang", "Duc", "03 thang", 9100000, R.drawable.mo231_pomeranian_trang));
+        DS_SAN_PHAM.add(new SanPham("MO904", "Pug Den", "Cai", "02 thang", 5200000, R.drawable.mo502_poodle_tiny_vang));
+        DS_SAN_PHAM.add(new SanPham("MO905", "Beagle Ba Mau", "Duc", "02 thang", 6100000, R.drawable.mo502_pembroke_corgi));
+        DS_SAN_PHAM.add(new SanPham("MO906", "Chihuahua Nau", "Cai", "02 thang", 4700000, R.drawable.cholongtrang));
+        DS_SAN_PHAM.add(new SanPham("MO907", "Golden Retriever", "Duc", "03 thang", 9400000, R.drawable.mo512_alaskan_malamute));
+        DS_SAN_PHAM.add(new SanPham("MO908", "Yorkshire Terrier", "Cai", "02 thang", 5800000, R.drawable.mo512_poodle_tiny));
+        DS_SAN_PHAM.add(new SanPham("MO909", "Boston Terrier", "Duc", "02 thang", 6900000, R.drawable.mo502_poodle_tiny_vang));
+        DS_SAN_PHAM.add(new SanPham("MO910", "Dachshund Nau", "Cai", "03 thang", 5600000, R.drawable.mo502_pembroke_corgi));
+        DS_SAN_PHAM.add(new SanPham("MO911", "Border Collie", "Duc", "03 thang", 9700000, R.drawable.mo231_pembroke_corgi));
+        DS_SAN_PHAM.add(new SanPham("MO912", "Papillon Mini", "Cai", "02 thang", 5400000, R.drawable.mo231_pomeranian_trang));
     }
 
     private static void khoiTaoTaiKhoan() {
