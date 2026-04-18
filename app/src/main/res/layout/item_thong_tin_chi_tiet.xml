@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="#1000078"
+            android:text=""
             android:textColor="#5B6670"
             android:textSize="14sp" />
     </LinearLayout>
@@ -50,7 +50,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cái"
+            android:text=""
             android:textColor="#5B6670"
             android:textSize="14sp" />
     </LinearLayout>
@@ -78,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2 tháng"
+            android:text=""
             android:textColor="#5B6670"
             android:textSize="14sp" />
     </LinearLayout>
@@ -106,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nhỏ"
+            android:text=""
             android:textColor="#5B6670"
             android:textSize="14sp" />
     </LinearLayout>
@@ -134,7 +134,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nâu đỏ"
+            android:text=""
             android:textColor="#5B6670"
             android:textSize="14sp" />
     </LinearLayout>
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:lineSpacingExtra="2dp"
-            android:text="Mô tả ngắn"
+            android:text=""
             android:textColor="#5B6670"
             android:textSize="14sp" />
     </LinearLayout>

@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -82,7 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="ThÃªm Má»™t Báº¡n"
+                        android:text="Them Mot Ban"
                         android:textColor="#003459"
                         android:textSize="28sp"
                         android:textStyle="bold" />
@@ -92,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="4dp"
-                        android:text="ThÃªm NgÃ n Niá»m Vui!"
+                        android:text="Them Ngan Niem Vui!"
                         android:textColor="#003459"
                         android:textSize="19sp"
                         android:textStyle="bold" />
@@ -103,7 +104,7 @@
                         android:layout_marginTop="12dp"
                         android:gravity="center"
                         android:lineSpacingExtra="2dp"
-                        android:text="CÃ³ má»™t con thÃº cÆ°ng Ä‘á»“ng nghÄ©a vá»›i viá»‡c báº¡n cÃ³ thÃªm niá»m vui má»›i. ChÃºng tÃ´i cÃ³ hÆ¡n 200 con thÃº cÆ°ng khá»e máº¡nh Ä‘á»ƒ Ä‘Ã¡p á»©ng nhu cáº§u cá»§a báº¡n!"
+                        android:text="Co mot con thu cung dong nghia voi viec ban co them niem vui moi. Chung toi co hon 200 con thu cung khoe manh de dap ung nhu cau cua ban!"
                         android:textColor="#3A3A3A"
                         android:textSize="10sp" />
 
@@ -120,7 +121,7 @@
                             android:layout_width="118dp"
                             android:layout_height="44dp"
                             android:background="@drawable/bg_btn_outline"
-                            android:text="Giá»›i Thiá»‡u"
+                            android:text="Gioi Thieu"
                             android:textAllCaps="false"
                             android:textColor="#0B3B68"
                             android:textSize="12sp" />
@@ -134,7 +135,7 @@
                             android:layout_width="136dp"
                             android:layout_height="44dp"
                             android:background="@drawable/bg_register_button"
-                            android:text="KhÃ¡m PhÃ¡ Ngay"
+                            android:text="Kham Pha Ngay"
                             android:textAllCaps="false"
                             android:textColor="#FFFFFF"
                             android:textSize="12sp" />
@@ -169,7 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="ChÃ³ Nhá»"
+                    android:text="Cho Nho"
                     android:textColor="#0B3B68"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -194,7 +195,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:text="Bá»™ lá»c"
+                        android:text="Bo loc"
                         android:textColor="#083B5C"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -207,7 +208,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginEnd="14dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -229,7 +231,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="MO231 - Pomeranian Tráº¯ng"
+                        android:text="MO231 - Pomeranian Trang"
                         android:textColor="#1A1A1A"
                         android:textSize="11sp"
                         android:textStyle="bold" />
@@ -238,14 +240,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Giá»‘ng: Äá»±c"
+                        android:text="Giong: Duc"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuá»•i: 02 thÃ¡ng"
+                        android:text="Tuoi: 02 thang"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
@@ -283,7 +285,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="MO502 - Poodle Tiny VÃ ng"
+                        android:text="MO502 - Poodle Tiny Vang"
                         android:textColor="#1A1A1A"
                         android:textSize="11sp"
                         android:textStyle="bold" />
@@ -292,14 +294,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Giá»‘ng: CÃ¡i"
+                        android:text="Giong: Cai"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuá»•i: 02 thÃ¡ng"
+                        android:text="Tuoi: 02 thang"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
@@ -321,7 +323,8 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="14dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -352,14 +355,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Giá»‘ng: Äá»±c"
+                        android:text="Giong: Duc"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuá»•i: 02 thÃ¡ng"
+                        android:text="Tuoi: 02 thang"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
@@ -406,14 +409,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Giá»‘ng: Äá»±c"
+                        android:text="Giong: Duc"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuá»•i: 03 thÃ¡ng"
+                        android:text="Tuoi: 03 thang"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
@@ -435,7 +438,8 @@
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="14dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -466,14 +470,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Giá»‘ng: Äá»±c"
+                        android:text="Giong: Duc"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuá»•i: 03 thÃ¡ng"
+                        android:text="Tuoi: 03 thang"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
@@ -520,14 +524,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Giá»‘ng: CÃ¡i"
+                        android:text="Giong: Cai"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuá»•i: 02 thÃ¡ng"
+                        android:text="Tuoi: 02 thang"
                         android:textColor="#7A7A7A"
                         android:textSize="10sp" />
 
@@ -548,13 +552,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="22dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="gone">
 
                 <TextView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:gravity="center"
-                    android:text="â†"
+                    android:text="?"
                     android:textColor="#0B3B68"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -610,7 +615,7 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:gravity="center"
-                    android:text="â†’"
+                    android:text="?"
                     android:textColor="#0B3B68"
                     android:textSize="20sp"
                     android:textStyle="bold" />

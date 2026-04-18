@@ -36,7 +36,7 @@
             android:background="@drawable/bg_thumb_frame"
             android:padding="2dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cholongtrang"
+            android:src="@null"
             android:contentDescription="sanpham" />
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:text="MO231 - Pomeranian Trắng"
+                android:text=""
                 android:textColor="#122B45"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="12.000.000 VND"
+                android:text=""
                 android:textColor="#0B3B68"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -97,7 +97,7 @@
                 android:layout_height="22dp"
                 android:background="@drawable/bg_qty_box"
                 android:gravity="center"
-                android:text="1"
+                android:text=""
                 android:textColor="#616161"
                 android:textSize="12sp"
                 android:textStyle="bold" />

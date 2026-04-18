@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,7 +68,7 @@ public class ManHinhGioHangActivity extends AppCompatActivity {
     }
 
     private void setupSuKien() {
-        btnMenu.setOnClickListener(v -> finish());
+        btnMenu.setOnClickListener(this::moMenuDieuHuong);
 
         btnXoa.setOnClickListener(v -> {
             int soDaXoa = adapter.xoaDaChon();
@@ -85,5 +86,30 @@ public class ManHinhGioHangActivity extends AppCompatActivity {
             }
             startActivity(new Intent(this, ManHinhThanhToanActivity.class));
         });
+    }
+
+    private void moMenuDieuHuong(android.view.View anchor) {
+        PopupMenu popupMenu = new PopupMenu(this, anchor);
+        popupMenu.getMenuInflater().inflate(R.menu.menu_drawer, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home || id == R.id.menu_trangchu) {
+                startActivity(new Intent(this, ManHinhChinhActivity.class));
+                return true;
+            }
+            if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
+                startActivity(new Intent(this, ManHinhSanPhamActivity.class));
+                return true;
+            }
+            if (id == R.id.nav_cart || id == R.id.menu_giohang) {
+                return true;
+            }
+            if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
+                startActivity(new Intent(this, ManHinhCaNhan.class));
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
     }
 }

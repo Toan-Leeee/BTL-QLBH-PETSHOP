@@ -17,6 +17,7 @@ import com.example.petshop.R;
 import com.example.petshop.data.DonHang;
 import com.example.petshop.data.DuLieuMau;
 import com.example.petshop.data.GioHangItem;
+import com.example.petshop.data.TaiKhoan;
 import com.example.petshop.prefs.QuanLyPrefs;
 import com.example.petshop.util.TienIch;
 import com.example.petshop.util.adapter.ThanhToanSanPhamAdapter;
@@ -71,11 +72,17 @@ public class ManHinhThanhToanActivity extends AppCompatActivity {
 
     private void bindThongTinNguoiNhan() {
         String tenDangNhap = QuanLyPrefs.layTenDangNhap(this);
-        if (tenDangNhap.isEmpty()) {
-            tenDangNhap = "Khach hang";
+
+        TaiKhoan taiKhoan = DuLieuMau.timTaiKhoanTheoTenDangNhap(tenDangNhap);
+        if (taiKhoan != null) {
+            txtNguoiNhan.setText(taiKhoan.getHoTen());
+            txtDiaChi.setText(taiKhoan.getDiaChi());
+        } else {
+            String hoTenLuu = QuanLyPrefs.layHoTen(this);
+            txtNguoiNhan.setText(hoTenLuu.isEmpty() ? "Khach hang" : hoTenLuu);
+            txtDiaChi.setText("Chua co dia chi giao hang");
         }
-        txtNguoiNhan.setText(tenDangNhap);
-        txtDiaChi.setText("Dia chi mac dinh: 9A1, NCT, Binh Hoa");
+
         txtVoucher.setText("Nhap voucher (vi du: GIAM10)");
         rbThanhToanNhanHang.setChecked(true);
     }

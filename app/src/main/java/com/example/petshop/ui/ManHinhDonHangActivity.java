@@ -1,8 +1,11 @@
 package com.example.petshop.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +26,8 @@ public class ManHinhDonHangActivity extends AppCompatActivity {
         setContentView(R.layout.activity_man_hinh_don_hang);
 
         ConstraintLayout root = findViewById(R.id.main);
+        ImageView btnMenu = findViewById(R.id.btnMenu);
+        btnMenu.setOnClickListener(this::moMenuDieuHuong);
         taoNoiDung(root);
     }
 
@@ -79,5 +84,31 @@ public class ManHinhDonHangActivity extends AppCompatActivity {
         }
 
         root.addView(box);
+    }
+
+    private void moMenuDieuHuong(View anchor) {
+        PopupMenu popupMenu = new PopupMenu(this, anchor);
+        popupMenu.getMenuInflater().inflate(R.menu.menu_drawer, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home || id == R.id.menu_trangchu) {
+                startActivity(new Intent(this, ManHinhChinhActivity.class));
+                return true;
+            }
+            if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
+                startActivity(new Intent(this, ManHinhSanPhamActivity.class));
+                return true;
+            }
+            if (id == R.id.nav_cart || id == R.id.menu_giohang) {
+                startActivity(new Intent(this, ManHinhGioHangActivity.class));
+                return true;
+            }
+            if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
+                startActivity(new Intent(this, ManHinhCaNhan.class));
+                return true;
+            }
+            return false;
+        });
+        popupMenu.show();
     }
 }

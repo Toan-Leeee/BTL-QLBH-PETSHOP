@@ -51,7 +51,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="Ảnh thú cưng"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cholongtrang" />
+                android:src="@null" />
 
             <ImageView
                 android:id="@+id/btnPrev"
@@ -86,7 +86,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="Ảnh phụ"
             android:scaleType="centerCrop"
-            android:src="@drawable/cholongtrang" />
+            android:src="@null" />
 
         <!-- Thumbnails -->
         <HorizontalScrollView
@@ -111,7 +111,7 @@
                     android:contentDescription="thumb1"
                     android:padding="2dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongtrang" />
+                    android:src="@null" />
 
                 <ImageView
                     android:id="@+id/thumb2"
@@ -122,7 +122,7 @@
                     android:contentDescription="thumb2"
                     android:padding="2dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongnau" />
+                    android:src="@null" />
 
                 <ImageView
                     android:id="@+id/thumb3"
@@ -133,7 +133,7 @@
                     android:contentDescription="thumb3"
                     android:padding="2dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongtrang" />
+                    android:src="@null" />
 
                 <ImageView
                     android:id="@+id/thumb4"
@@ -144,7 +144,7 @@
                     android:contentDescription="thumb4"
                     android:padding="2dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongnau" />
+                    android:src="@null" />
 
                 <ImageView
                     android:id="@+id/thumb5"
@@ -154,7 +154,7 @@
                     android:contentDescription="thumb5"
                     android:padding="2dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/cholongtrang" />
+                    android:src="@null" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -171,7 +171,7 @@
                 android:id="@+id/txtTen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Shiba Inu Màu Nâu Đỏ"
+                android:text=""
                 android:textColor="#102C43"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -181,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="12.000.000 VND"
+                android:text=""
                 android:textColor="#0B3B68"
                 android:textSize="18sp"
                 android:textStyle="bold" />

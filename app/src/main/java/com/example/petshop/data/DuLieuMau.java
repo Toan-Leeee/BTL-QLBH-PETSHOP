@@ -35,9 +35,27 @@ public final class DuLieuMau {
     }
 
     private static void khoiTaoTaiKhoan() {
-        DS_TAI_KHOAN.add(new TaiKhoan("admin", "123456", "Admin", "admin@petshop.local"));
-        DS_TAI_KHOAN.add(new TaiKhoan("user1", "123456", "Nguyen Van A", "user1@petshop.local"));
-        DS_TAI_KHOAN.add(new TaiKhoan("user2", "123456", "Tran Thi B", "user2@petshop.local"));
+        DS_TAI_KHOAN.add(new TaiKhoan(
+                "admin",
+                "123456",
+                "Admin",
+                "admin@petshop.local",
+                "1 Tran Hung Dao, Quan 1, TP HCM"
+        ));
+        DS_TAI_KHOAN.add(new TaiKhoan(
+                "user1",
+                "123456",
+                "Nguyen Van A",
+                "user1@petshop.local",
+                "9A1, NCT, Phuong Binh Hoa, An Giang"
+        ));
+        DS_TAI_KHOAN.add(new TaiKhoan(
+                "user2",
+                "123456",
+                "Tran Thi B",
+                "user2@petshop.local",
+                "25 Le Loi, Quan Hai Chau, Da Nang"
+        ));
     }
 
     private static void khoiTaoThuCung() {
@@ -86,6 +104,19 @@ public final class DuLieuMau {
             boolean dungTaiKhoan = tk.getTenDangNhap().equalsIgnoreCase(key)
                     || tk.getEmail().equalsIgnoreCase(key);
             if (dungTaiKhoan && tk.getMatKhau().equals(matKhau)) {
+                return tk;
+            }
+        }
+        return null;
+    }
+
+    public static TaiKhoan timTaiKhoanTheoTenDangNhap(String tenDangNhap) {
+        if (tenDangNhap == null) {
+            return null;
+        }
+        String key = tenDangNhap.trim();
+        for (TaiKhoan tk : DS_TAI_KHOAN) {
+            if (tk.getTenDangNhap().equalsIgnoreCase(key)) {
                 return tk;
             }
         }

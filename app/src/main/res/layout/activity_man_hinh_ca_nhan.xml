@@ -26,7 +26,7 @@
                 android:id="@+id/txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nguyen Van A"
+                android:text=""
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -34,12 +34,12 @@
                 android:id="@+id/txtPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(+84) 965xxxxxxx" />
+                android:text="" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Da xac thuc"
+                android:text=""
                 android:textColor="@android:color/holo_green_dark" />
         </LinearLayout>
     </LinearLayout>
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Don hang gan day"
+        android:text=""
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -57,12 +57,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Danh sach don hang..." />
+        android:text="" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Dang xuat" />
+        android:text="" />
 </LinearLayout>

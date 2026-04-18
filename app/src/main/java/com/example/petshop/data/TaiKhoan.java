@@ -5,16 +5,22 @@ public class TaiKhoan {
     private final String matKhau;
     private final String hoTen;
     private final String email;
+    private final String diaChi;
 
     public TaiKhoan(String tenDangNhap, String matKhau, String hoTen) {
-        this(tenDangNhap, matKhau, hoTen, "");
+        this(tenDangNhap, matKhau, hoTen, "", "");
     }
 
     public TaiKhoan(String tenDangNhap, String matKhau, String hoTen, String email) {
+        this(tenDangNhap, matKhau, hoTen, email, "");
+    }
+
+    public TaiKhoan(String tenDangNhap, String matKhau, String hoTen, String email, String diaChi) {
         this.tenDangNhap = tenDangNhap;
         this.matKhau = matKhau;
         this.hoTen = hoTen;
         this.email = email;
+        this.diaChi = diaChi;
     }
 
     public String getTenDangNhap() {
@@ -31,5 +37,9 @@ public class TaiKhoan {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
     }
 }

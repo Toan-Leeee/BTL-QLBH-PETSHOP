@@ -16,14 +16,14 @@
         android:adjustViewBounds="true"
         android:contentDescription="sanpham"
         android:scaleType="centerCrop"
-        android:src="@drawable/cholongtrang" />
+        android:src="@null" />
 
     <TextView
         android:id="@+id/txtTenSanPham"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="MO231 - Pomeranian Trắng"
+        android:text=""
         android:textColor="#222222"
         android:textSize="11sp"
         android:textStyle="bold" />
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Giống: Đực"
+        android:text=""
         android:textColor="#777777"
         android:textSize="10sp" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/txtTuoi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tuổi: 02 tháng"
+        android:text=""
         android:textColor="#777777"
         android:textSize="10sp" />
 
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="6.900.000 VND"
+        android:text=""
         android:textColor="#0B3B68"
         android:textSize="12sp"
         android:textStyle="bold" />
