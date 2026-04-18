@@ -19,7 +19,6 @@
             android:orientation="vertical"
             android:paddingBottom="24dp">
 
-            <!-- Header -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="86dp"
@@ -63,7 +62,6 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <!-- Hero -->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="520dp"
@@ -158,7 +156,6 @@
                     android:src="@drawable/cholongtrang" />
             </FrameLayout>
 
-            <!-- Section header -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -202,369 +199,36 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <!-- Grid row 1 -->
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSanPham"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginEnd="14dp"
-                android:orientation="horizontal"
-                tools:visibility="gone">
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_san_pham" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_product_card"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="item1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cholongtrang" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="MO231 - Pomeranian Trang"
-                        android:textColor="#1A1A1A"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Giong: Duc"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tuoi: 02 thang"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="6.900.000 VND"
-                        android:textColor="#0B3B68"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="12dp"
-                    android:layout_height="1dp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_product_card"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="item2"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cholongnau" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="MO502 - Poodle Tiny Vang"
-                        android:textColor="#1A1A1A"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Giong: Cai"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tuoi: 02 thang"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="3.900.000 VND"
-                        android:textColor="#0B3B68"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Grid row 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="14dp"
-                android:orientation="horizontal"
-                tools:visibility="gone">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_product_card"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="item3"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cholongnau" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="MO102 - Poodle Tiny Sepia"
-                        android:textColor="#1A1A1A"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Giong: Duc"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tuoi: 02 thang"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="4.000.000 VND"
-                        android:textColor="#0B3B68"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="12dp"
-                    android:layout_height="1dp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_product_card"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="item4"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cholongtrang" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="MO512 - Alaskan Malamute"
-                        android:textColor="#1A1A1A"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Giong: Duc"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tuoi: 03 thang"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="8.900.000 VND"
-                        android:textColor="#0B3B68"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Grid row 3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="14dp"
-                android:orientation="horizontal"
-                tools:visibility="gone">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_product_card"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="item5"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cholongtrang" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="MO231 - Pembroke Corgi"
-                        android:textColor="#1A1A1A"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Giong: Duc"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tuoi: 03 thang"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="7.900.000 VND"
-                        android:textColor="#0B3B68"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="12dp"
-                    android:layout_height="1dp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_product_card"
-                    android:orientation="vertical"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="item6"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/cholongnau" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="MO502 - Pembroke Corgi"
-                        android:textColor="#1A1A1A"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Giong: Cai"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tuoi: 02 thang"
-                        android:textColor="#7A7A7A"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="6.900.000 VND"
-                        android:textColor="#0B3B68"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Pagination -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="22dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-                tools:visibility="gone">
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/btnTrangTruoc"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:gravity="center"
-                    android:text="?"
+                    android:text="&lt;"
                     android:textColor="#0B3B68"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtTrang1"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_page_current"
@@ -575,6 +239,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtTrang2"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_marginStart="10dp"
@@ -585,6 +250,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtTrang3"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:gravity="center"
@@ -594,6 +260,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtCham"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:gravity="center"
@@ -603,19 +270,21 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtTongTrang"
                     android:layout_width="42dp"
                     android:layout_height="36dp"
                     android:gravity="center"
-                    android:text="28"
+                    android:text="3"
                     android:textColor="#0B3B68"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/btnTrangSau"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:gravity="center"
-                    android:text="?"
+                    android:text="&gt;"
                     android:textColor="#0B3B68"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -630,9 +299,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#FFF9F1"
-        app:itemIconTint="#083B5C"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@null"
         app:itemTextColor="#083B5C"
         app:menu="@menu/menu_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
-

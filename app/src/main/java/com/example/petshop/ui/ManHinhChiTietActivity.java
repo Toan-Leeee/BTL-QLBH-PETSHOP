@@ -2,18 +2,25 @@ package com.example.petshop.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.petshop.R;
 import com.example.petshop.data.DuLieuMau;
 import com.example.petshop.data.SanPham;
+import com.example.petshop.util.MenuDieuHuongHelper;
 import com.example.petshop.util.TienIch;
+import com.example.petshop.util.XacThucHelper;
 import com.example.petshop.util.adapter.SanPhamAdapter;
 
 import java.util.ArrayList;
@@ -21,6 +28,7 @@ import java.util.List;
 
 public class ManHinhChiTietActivity extends AppCompatActivity {
 
+    private ImageView btnMenu;
     private ImageView imgMain;
     private ImageView imgBannerSecondary;
     private ImageView btnPrev;
@@ -42,6 +50,7 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
 
     private RecyclerView rvLienQuan;
     private Button btnMuaNgay;
+    private Button btnThemVaoGio;
 
     private List<SanPham> dsSanPham;
     private int viTriHienTai = 0;
@@ -49,6 +58,9 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (XacThucHelper.yeuCauDangNhap(this)) {
+            return;
+        }
         setContentView(R.layout.activity_man_hinh_chi_tiet);
 
         dsSanPham = DuLieuMau.layDanhSachSanPham();
@@ -63,6 +75,7 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
     }
 
     private void anhXaView() {
+        btnMenu = findViewById(R.id.btnMenu);
         imgMain = findViewById(R.id.imgMain);
         imgBannerSecondary = findViewById(R.id.imgBannerSecondary);
         btnPrev = findViewById(R.id.btnPrev);
@@ -84,9 +97,12 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
 
         rvLienQuan = findViewById(R.id.rvLienQuan);
         btnMuaNgay = findViewById(R.id.btnMuaNgay);
+        btnThemVaoGio = findViewById(R.id.btnThemVaoGio);
     }
 
     private void setupSuKien() {
+        btnMenu.setOnClickListener(this::moMenuDieuHuong);
+
         btnPrev.setOnClickListener(v -> {
             if (dsSanPham.isEmpty()) {
                 return;
@@ -116,6 +132,52 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
             DuLieuMau.themVaoGioHang(dsSanPham.get(viTriHienTai), 1);
             startActivity(new Intent(this, ManHinhGioHangActivity.class));
         });
+
+        btnThemVaoGio.setOnClickListener(v -> {
+            if (dsSanPham.isEmpty()) {
+                return;
+            }
+            SanPham sanPham = dsSanPham.get(viTriHienTai);
+            DuLieuMau.themVaoGioHang(sanPham, 1);
+            Toast.makeText(this, "Da them vao gio hang", Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void moMenuDieuHuong(View anchor) {
+        MenuBuilder menuBuilder = new MenuBuilder(this);
+        new PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
+        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
+
+        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
+        menuPopupHelper.setForceShowIcon(true);
+        menuBuilder.setCallback(new MenuBuilder.Callback() {
+            @Override
+            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.nav_home || id == R.id.menu_trangchu) {
+                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhChinhActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
+                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhSanPhamActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_cart || id == R.id.menu_giohang) {
+                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhGioHangActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
+                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhCaNhan.class));
+                    return true;
+                }
+                return false;
+            }
+
+            @Override
+            public void onMenuModeChange(MenuBuilder menu) {
+            }
+        });
+        menuPopupHelper.show();
     }
 
     private void bindSanPhamTheoViTri(int viTri) {
@@ -154,7 +216,7 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
         List<SanPham> dsLienQuan = new ArrayList<>();
 
         for (int i = 0; i < ds.size(); i++) {
-            if (i != viTriDangXem) {
+            if (i != viTriDangXem && dsLienQuan.size() < 6) {
                 dsLienQuan.add(ds.get(i));
             }
         }

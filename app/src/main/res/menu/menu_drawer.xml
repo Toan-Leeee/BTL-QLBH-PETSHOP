@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/home_icon"
-        android:title="" />
+        android:icon="@drawable/ic_menu_home_legacy"
+        android:title="Home" />
 
     <item
         android:id="@+id/nav_pet"
-        android:icon="@drawable/pet_icon"
-        android:title="" />
+        android:icon="@drawable/ic_menu_pet_legacy"
+        android:title="San pham" />
 
     <item
         android:id="@+id/nav_cart"
-        android:icon="@drawable/cart_icon"
-        android:title="" />
+        android:icon="@drawable/ic_menu_cart_legacy"
+        android:title="Gio hang" />
 
     <item
         android:id="@+id/nav_user"
-        android:icon="@drawable/user_icon"
-        android:title="" />
+        android:icon="@drawable/ic_menu_user_legacy"
+        android:title="Tai khoan" />
 
 </menu>

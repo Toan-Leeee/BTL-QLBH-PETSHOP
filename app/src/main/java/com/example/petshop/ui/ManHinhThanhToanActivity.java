@@ -20,6 +20,7 @@ import com.example.petshop.data.GioHangItem;
 import com.example.petshop.data.TaiKhoan;
 import com.example.petshop.prefs.QuanLyPrefs;
 import com.example.petshop.util.TienIch;
+import com.example.petshop.util.XacThucHelper;
 import com.example.petshop.util.adapter.ThanhToanSanPhamAdapter;
 
 import java.util.List;
@@ -46,6 +47,9 @@ public class ManHinhThanhToanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (XacThucHelper.yeuCauDangNhap(this)) {
+            return;
+        }
         setContentView(R.layout.activity_man_hinh_thanh_toan);
 
         anhXa();

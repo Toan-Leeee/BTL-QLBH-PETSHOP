@@ -4,10 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,8 @@ import com.example.petshop.R;
 import com.example.petshop.data.DuLieuMau;
 import com.example.petshop.data.GioHangItem;
 import com.example.petshop.data.SanPham;
+import com.example.petshop.util.MenuDieuHuongHelper;
+import com.example.petshop.util.XacThucHelper;
 import com.example.petshop.util.adapter.GioHangAdapter;
 
 import java.util.List;
@@ -32,6 +35,9 @@ public class ManHinhGioHangActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (XacThucHelper.yeuCauDangNhap(this)) {
+            return;
+        }
         setContentView(R.layout.activity_man_hinh_gio_hang);
 
         anhXa();
@@ -89,27 +95,39 @@ public class ManHinhGioHangActivity extends AppCompatActivity {
     }
 
     private void moMenuDieuHuong(android.view.View anchor) {
-        PopupMenu popupMenu = new PopupMenu(this, anchor);
-        popupMenu.getMenuInflater().inflate(R.menu.menu_drawer, popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(item -> {
-            int id = item.getItemId();
-            if (id == R.id.nav_home || id == R.id.menu_trangchu) {
-                startActivity(new Intent(this, ManHinhChinhActivity.class));
-                return true;
+        MenuBuilder menuBuilder = new MenuBuilder(this);
+        new android.widget.PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
+        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
+
+        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
+        menuPopupHelper.setForceShowIcon(true);
+        menuBuilder.setCallback(new MenuBuilder.Callback() {
+            @Override
+            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.nav_home || id == R.id.menu_trangchu) {
+                    startActivity(new Intent(ManHinhGioHangActivity.this, ManHinhChinhActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
+                    startActivity(new Intent(ManHinhGioHangActivity.this, ManHinhSanPhamActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_cart || id == R.id.menu_giohang) {
+                    return true;
+                }
+                if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
+                    startActivity(new Intent(ManHinhGioHangActivity.this, ManHinhCaNhan.class));
+                    return true;
+                }
+                return false;
             }
-            if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
-                startActivity(new Intent(this, ManHinhSanPhamActivity.class));
-                return true;
+
+            @Override
+            public void onMenuModeChange(MenuBuilder menu) {
             }
-            if (id == R.id.nav_cart || id == R.id.menu_giohang) {
-                return true;
-            }
-            if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
-                startActivity(new Intent(this, ManHinhCaNhan.class));
-                return true;
-            }
-            return false;
         });
-        popupMenu.show();
+        menuPopupHelper.show();
     }
+
 }

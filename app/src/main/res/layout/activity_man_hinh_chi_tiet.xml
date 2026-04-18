@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:contentDescription="Ảnh thú cưng"
+                android:contentDescription="áº¢nh thÃº cÆ°ng"
                 android:scaleType="centerCrop"
                 android:src="@null" />
 
@@ -76,19 +76,33 @@
                 android:padding="12dp"
                 android:src="@android:drawable/ic_media_next"
                 app:tint="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="start|top"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_circle_soft"
+                android:contentDescription="menu"
+                android:padding="10dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                app:tint="#FFFFFF" />
         </FrameLayout>
 
         <!-- Extra banner image strip -->
+
+        <!-- Thumbnails -->
         <ImageView
             android:id="@+id/imgBannerSecondary"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:adjustViewBounds="true"
-            android:contentDescription="Ảnh phụ"
+            android:contentDescription="áº¢nh phá»¥"
             android:scaleType="centerCrop"
             android:src="@null" />
 
-        <!-- Thumbnails -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -186,17 +200,41 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnMuaNgay"
-                android:layout_width="132dp"
-                android:layout_height="48dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/bg_register_button"
-                android:text="Mua Ngay"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnMuaNgay"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_register_button"
+                    android:text="Mua Ngay"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="1dp" />
+
+                <Button
+                    android:id="@+id/btnThemVaoGio"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_outline"
+                    android:text="Them vao gio"
+                    android:textAllCaps="false"
+                    android:textColor="#0B3B68"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <!-- Detail table -->
             <LinearLayout
@@ -221,7 +259,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chia sẻ:"
+                    android:text="Chia sáº»:"
                     android:textColor="#0B3B68"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -255,105 +293,13 @@
                     app:tint="#9AA4AC" />
             </LinearLayout>
         </LinearLayout>
-
-        <!-- Customer section -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="16dp"
-            android:text="Khách hàng của chúng tôi"
-            android:textColor="#0B3B68"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp">
-
-                <ImageView
-                    android:layout_width="248dp"
-                    android:layout_height="380dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/bg_product_card"
-                    android:contentDescription="customer1"
-                    android:padding="0dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/home_icon" />
-
-                <ImageView
-                    android:layout_width="160dp"
-                    android:layout_height="380dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/bg_product_card"
-                    android:contentDescription="customer2"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/cholongnau" />
-
-                <ImageView
-                    android:layout_width="160dp"
-                    android:layout_height="380dp"
-                    android:background="@drawable/bg_product_card"
-                    android:contentDescription="customer3"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/cholongtrang" />
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@drawable/bg_dot_active" />
-
-            <View
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_dot_inactive" />
-
-            <View
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_dot_inactive" />
-
-            <View
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_dot_inactive" />
-
-            <View
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_dot_inactive" />
-        </LinearLayout>
-
         <!-- Related products -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
-            android:text="Có gì mới?"
+            android:text="CÃ³ gÃ¬ má»›i?"
             android:textColor="#6B7280"
             android:textSize="12sp" />
 
@@ -362,7 +308,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="Xem Thêm Chó Con"
+            android:text="Xem ThÃªm ChÃ³ Con"
             android:textColor="#0B3B68"
             android:textSize="18sp"
             android:textStyle="bold" />

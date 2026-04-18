@@ -5,16 +5,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.petshop.R;
 import com.example.petshop.data.DonHang;
 import com.example.petshop.data.DuLieuMau;
+import com.example.petshop.util.MenuDieuHuongHelper;
 import com.example.petshop.util.TienIch;
+import com.example.petshop.util.XacThucHelper;
 
 import java.util.List;
 
@@ -23,6 +27,9 @@ public class ManHinhDonHangActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (XacThucHelper.yeuCauDangNhap(this)) {
+            return;
+        }
         setContentView(R.layout.activity_man_hinh_don_hang);
 
         ConstraintLayout root = findViewById(R.id.main);
@@ -83,32 +90,62 @@ public class ManHinhDonHangActivity extends AppCompatActivity {
             box.addView(tvTrangThai);
         }
 
+        Button btnTiepTucMuaSam = new Button(this);
+        btnTiepTucMuaSam.setText("Tiep tuc mua sam");
+        btnTiepTucMuaSam.setAllCaps(false);
+        btnTiepTucMuaSam.setTextSize(16f);
+        btnTiepTucMuaSam.setTextColor(0xFFFFFFFF);
+        btnTiepTucMuaSam.setBackgroundResource(R.drawable.bg_register_button);
+
+        LinearLayout.LayoutParams lpBtn = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        lpBtn.topMargin = 32;
+        btnTiepTucMuaSam.setLayoutParams(lpBtn);
+        btnTiepTucMuaSam.setOnClickListener(v ->
+                startActivity(new Intent(ManHinhDonHangActivity.this, ManHinhSanPhamActivity.class)));
+
+        box.addView(btnTiepTucMuaSam);
+
         root.addView(box);
     }
 
     private void moMenuDieuHuong(View anchor) {
-        PopupMenu popupMenu = new PopupMenu(this, anchor);
-        popupMenu.getMenuInflater().inflate(R.menu.menu_drawer, popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(item -> {
-            int id = item.getItemId();
-            if (id == R.id.nav_home || id == R.id.menu_trangchu) {
-                startActivity(new Intent(this, ManHinhChinhActivity.class));
-                return true;
+        MenuBuilder menuBuilder = new MenuBuilder(this);
+        new android.widget.PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
+        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
+
+        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
+        menuPopupHelper.setForceShowIcon(true);
+        menuBuilder.setCallback(new MenuBuilder.Callback() {
+            @Override
+            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.nav_home || id == R.id.menu_trangchu) {
+                    startActivity(new Intent(ManHinhDonHangActivity.this, ManHinhChinhActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
+                    startActivity(new Intent(ManHinhDonHangActivity.this, ManHinhSanPhamActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_cart || id == R.id.menu_giohang) {
+                    startActivity(new Intent(ManHinhDonHangActivity.this, ManHinhGioHangActivity.class));
+                    return true;
+                }
+                if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
+                    startActivity(new Intent(ManHinhDonHangActivity.this, ManHinhCaNhan.class));
+                    return true;
+                }
+                return false;
             }
-            if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
-                startActivity(new Intent(this, ManHinhSanPhamActivity.class));
-                return true;
+
+            @Override
+            public void onMenuModeChange(MenuBuilder menu) {
             }
-            if (id == R.id.nav_cart || id == R.id.menu_giohang) {
-                startActivity(new Intent(this, ManHinhGioHangActivity.class));
-                return true;
-            }
-            if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
-                startActivity(new Intent(this, ManHinhCaNhan.class));
-                return true;
-            }
-            return false;
         });
-        popupMenu.show();
+        menuPopupHelper.show();
     }
+
 }
