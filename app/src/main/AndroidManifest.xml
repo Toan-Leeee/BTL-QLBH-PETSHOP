@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetShop">
         <activity
+            android:name=".ui.ManHinhCaNhan"
+            android:exported="false" />
+        <activity
             android:name=".ui.ManHinhThanhToanActivity"
             android:exported="false" />
         <activity

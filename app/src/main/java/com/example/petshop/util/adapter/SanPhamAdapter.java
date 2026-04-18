@@ -41,12 +41,16 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.VH> {
     public void onBindViewHolder(@NonNull VH h, int position) {
         SanPham sp = ds.get(position);
 
-        h.txtTen.setText(sp.getTen());
-        h.txtGia.setText(TienIch.dinhDangTien((int) sp.getGia()));
-        h.imgAnh.setImageResource(sp.getHinhAnh());
+        h.txtTenSanPham.setText(sp.getMa() + " - " + sp.getTen());
+        h.txtGiong.setText("Giong: " + sp.getGioiTinh());
+        h.txtTuoi.setText("Tuoi: " + sp.getTuoi());
+        h.txtGia.setText(TienIch.dinhDangTien(sp.getGia()));
+        h.imgSanPham.setImageResource(sp.getHinhAnh());
 
         h.itemView.setOnClickListener(v -> {
-            if (listener != null) listener.onClick(sp);
+            if (listener != null) {
+                listener.onClick(sp);
+            }
         });
     }
 
@@ -56,13 +60,18 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.VH> {
     }
 
     public static class VH extends RecyclerView.ViewHolder {
-        ImageView imgAnh;
-        TextView txtTen, txtGia;
+        ImageView imgSanPham;
+        TextView txtTenSanPham;
+        TextView txtGiong;
+        TextView txtTuoi;
+        TextView txtGia;
 
         public VH(@NonNull View itemView) {
             super(itemView);
-            imgAnh = itemView.findViewById(R.id.imgAnh);
-            txtTen = itemView.findViewById(R.id.txtTen);
+            imgSanPham = itemView.findViewById(R.id.imgSanPham);
+            txtTenSanPham = itemView.findViewById(R.id.txtTenSanPham);
+            txtGiong = itemView.findViewById(R.id.txtGiong);
+            txtTuoi = itemView.findViewById(R.id.txtTuoi);
             txtGia = itemView.findViewById(R.id.txtGia);
         }
     }

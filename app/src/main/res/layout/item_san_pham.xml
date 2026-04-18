@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="2dp">
+    android:layout_margin="6dp"
+    android:background="@drawable/bg_product_card"
+    android:elevation="1dp"
+    android:orientation="vertical"
+    android:padding="8dp">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imgSanPham"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="sanpham"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cholongtrang" />
+
+    <TextView
+        android:id="@+id/txtTenSanPham"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:layout_marginTop="8dp"
+        android:text="MO231 - Pomeranian Trắng"
+        android:textColor="#222222"
+        android:textSize="11sp"
+        android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imgAnh"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/dog" />
+    <TextView
+        android:id="@+id/txtGiong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Giống: Đực"
+        android:textColor="#777777"
+        android:textSize="10sp" />
 
-        <TextView
-            android:id="@+id/txtTen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Tên sản phẩm"
-            android:textColor="#111111"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtTuoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tuổi: 02 tháng"
+        android:textColor="#777777"
+        android:textSize="10sp" />
 
-        <TextView
-            android:id="@+id/txtGia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="0 VND"
-            android:textColor="#111111"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtGia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="6.900.000 VND"
+        android:textColor="#0B3B68"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
-    </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

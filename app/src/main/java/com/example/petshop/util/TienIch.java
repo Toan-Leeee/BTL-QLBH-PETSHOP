@@ -1,26 +1,27 @@
 package com.example.petshop.util;
 
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
-public class TienIch {
+public final class TienIch {
 
-    // Chỉ để HIỂN THỊ
-    public static String dinhDangTien(int soTien) {
-        DecimalFormat df = new DecimalFormat("#,###");
-        return df.format(soTien) + " VND";
+    private TienIch() {
     }
 
-    // Nếu muốn lưu SharePreferences dạng String thì dùng cái này
-    public static String tienToString(int soTien) {
+    public static String dinhDangTien(long soTien) {
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(new Locale("vi", "VN"));
+        return numberFormat.format(soTien) + " VND";
+    }
+
+    public static String tienToString(long soTien) {
         return String.valueOf(soTien);
     }
 
-    // Nếu đọc từ SharePreferences (String) về lại int để tính toán
-    public static int stringToTien(String s) {
+    public static long stringToTien(String giaTri) {
         try {
-            return Integer.parseInt(s);
+            return Long.parseLong(giaTri);
         } catch (Exception e) {
-            return 0;
+            return 0L;
         }
     }
 }

@@ -1,12 +1,12 @@
 package com.example.petshop.data;
 
 public class SanPham {
-    private String ma;
-    private String ten;
-    private String gioiTinh;
-    private String tuoi;
-    private long gia;
-    private int hinhAnh;
+    private final String ma;
+    private final String ten;
+    private final String gioiTinh;
+    private final String tuoi;
+    private final long gia;
+    private final int hinhAnh;
 
     public SanPham(String ma, String ten, String gioiTinh, String tuoi, long gia, int hinhAnh) {
         this.ma = ma;
@@ -15,6 +15,10 @@ public class SanPham {
         this.tuoi = tuoi;
         this.gia = gia;
         this.hinhAnh = hinhAnh;
+    }
+
+    public String getMa() {
+        return ma;
     }
 
     public String getTen() {

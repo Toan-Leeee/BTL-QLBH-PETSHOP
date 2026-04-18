@@ -1,16 +1,22 @@
 package com.example.petshop.data;
 
 public class DonHang {
-    private String maDon;
-    private String tenDangNhap;
-    private long tongTien;
-    private String trangThai;
+    private final String maDon;
+    private final String tenDangNhap;
+    private final long tongTien;
+    private final String trangThai;
+    private final String phuongThucThanhToan;
 
     public DonHang(String maDon, String tenDangNhap, long tongTien, String trangThai) {
+        this(maDon, tenDangNhap, tongTien, trangThai, "COD");
+    }
+
+    public DonHang(String maDon, String tenDangNhap, long tongTien, String trangThai, String phuongThucThanhToan) {
         this.maDon = maDon;
         this.tenDangNhap = tenDangNhap;
         this.tongTien = tongTien;
         this.trangThai = trangThai;
+        this.phuongThucThanhToan = phuongThucThanhToan;
     }
 
     public String getMaDon() {
@@ -27,5 +33,9 @@ public class DonHang {
 
     public String getTrangThai() {
         return trangThai;
+    }
+
+    public String getPhuongThucThanhToan() {
+        return phuongThucThanhToan;
     }
 }

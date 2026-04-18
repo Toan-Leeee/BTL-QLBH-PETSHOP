@@ -2,12 +2,15 @@ package com.example.petshop.data;
 
 public class GioHangItem {
 
-    private SanPham sanPham;
+    private final SanPham sanPham;
     private int soLuong;
+    private boolean daChon;
+    private String phanLoai;
 
     public GioHangItem(SanPham sanPham, int soLuong) {
         this.sanPham = sanPham;
-        this.soLuong = soLuong;
+        this.soLuong = Math.max(1, soLuong);
+        this.phanLoai = "Mac dinh";
     }
 
     public SanPham getSanPham() {
@@ -19,10 +22,25 @@ public class GioHangItem {
     }
 
     public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
+        this.soLuong = Math.max(1, soLuong);
     }
 
-    // ✅ DÙNG long – KHÔNG FORMAT
+    public boolean isDaChon() {
+        return daChon;
+    }
+
+    public void setDaChon(boolean daChon) {
+        this.daChon = daChon;
+    }
+
+    public String getPhanLoai() {
+        return phanLoai;
+    }
+
+    public void setPhanLoai(String phanLoai) {
+        this.phanLoai = phanLoai;
+    }
+
     public long tinhThanhTien() {
         return sanPham.getGia() * soLuong;
     }
