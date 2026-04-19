@@ -12,16 +12,4 @@ public final class TienIch {
         NumberFormat numberFormat = NumberFormat.getNumberInstance(new Locale("vi", "VN"));
         return numberFormat.format(soTien) + " VND";
     }
-
-    public static String tienToString(long soTien) {
-        return String.valueOf(soTien);
-    }
-
-    public static long stringToTien(String giaTri) {
-        try {
-            return Long.parseLong(giaTri);
-        } catch (Exception e) {
-            return 0L;
-        }
-    }
 }
