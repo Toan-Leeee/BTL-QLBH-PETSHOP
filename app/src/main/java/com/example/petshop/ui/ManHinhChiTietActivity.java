@@ -2,16 +2,12 @@ package com.example.petshop.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -101,7 +97,7 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
     }
 
     private void setupSuKien() {
-        btnMenu.setOnClickListener(this::moMenuDieuHuong);
+        btnMenu.setOnClickListener(v -> MenuDieuHuongHelper.moMenuDieuHuong(this, v, 0));
 
         btnPrev.setOnClickListener(v -> {
             if (dsSanPham.isEmpty()) {
@@ -139,45 +135,8 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
             }
             SanPham sanPham = dsSanPham.get(viTriHienTai);
             DuLieuMau.themVaoGioHang(sanPham, 1);
-            Toast.makeText(this, "Da them vao gio hang", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
         });
-    }
-
-    private void moMenuDieuHuong(View anchor) {
-        MenuBuilder menuBuilder = new MenuBuilder(this);
-        new PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
-        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
-
-        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
-        menuPopupHelper.setForceShowIcon(true);
-        menuBuilder.setCallback(new MenuBuilder.Callback() {
-            @Override
-            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
-                int id = item.getItemId();
-                if (id == R.id.nav_home || id == R.id.menu_trangchu) {
-                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhChinhActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
-                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhSanPhamActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_cart || id == R.id.menu_giohang) {
-                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhGioHangActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
-                    startActivity(new Intent(ManHinhChiTietActivity.this, ManHinhCaNhan.class));
-                    return true;
-                }
-                return false;
-            }
-
-            @Override
-            public void onMenuModeChange(MenuBuilder menu) {
-            }
-        });
-        menuPopupHelper.show();
     }
 
     private void bindSanPhamTheoViTri(int viTri) {
@@ -202,7 +161,7 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
         txtTuoi.setText(sp.getTuoi());
         txtKichThuoc.setText(layKichThuoc(sp.getTen()));
         txtMauSac.setText(layMauSac(sp.getTen()));
-        txtMoTa.setText("Thu cung giong " + sp.getTen() + ", tinh cach than thien, phu hop nuoi trong gia dinh.");
+        txtMoTa.setText("Thú cưng giống " + sp.getTen() + ", tính cách thân thiện, phù hợp nuôi trong gia đình.");
 
         setupSanPhamLienQuan(dsSanPham, viTri);
     }
@@ -214,7 +173,6 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
 
     private void setupSanPhamLienQuan(List<SanPham> ds, int viTriDangXem) {
         List<SanPham> dsLienQuan = new ArrayList<>();
-
         for (int i = 0; i < ds.size(); i++) {
             if (i != viTriDangXem && dsLienQuan.size() < 6) {
                 dsLienQuan.add(ds.get(i));
@@ -223,40 +181,38 @@ public class ManHinhChiTietActivity extends AppCompatActivity {
 
         rvLienQuan.setLayoutManager(new GridLayoutManager(this, 2));
         rvLienQuan.setNestedScrollingEnabled(false);
-
-        SanPhamAdapter adapter = new SanPhamAdapter(dsLienQuan, item -> {
+        rvLienQuan.setAdapter(new SanPhamAdapter(dsLienQuan, item -> {
             int viTriMoi = DuLieuMau.timViTriSanPhamTheoMa(item.getMa());
             viTriHienTai = viTriMoi;
             bindSanPhamTheoViTri(viTriHienTai);
-        });
-        rvLienQuan.setAdapter(adapter);
+        }));
     }
 
     private String layKichThuoc(String ten) {
         String tenThuong = ten.toLowerCase();
         if (tenThuong.contains("pomeranian") || tenThuong.contains("poodle")) {
-            return "Nho";
+            return "Nhỏ";
         }
         if (tenThuong.contains("corgi")) {
-            return "Trung binh";
+            return "Trung bình";
         }
-        return "Lon";
+        return "Lớn";
     }
 
     private String layMauSac(String ten) {
         String tenThuong = ten.toLowerCase();
         if (tenThuong.contains("trang")) {
-            return "Trang";
+            return "Trắng";
         }
         if (tenThuong.contains("vang")) {
-            return "Vang";
+            return "Vàng";
         }
         if (tenThuong.contains("sepia")) {
-            return "Nau";
+            return "Nâu";
         }
         if (tenThuong.contains("xam")) {
-            return "Xam trang";
+            return "Xám trắng";
         }
-        return "Nau do";
+        return "Nâu đỏ";
     }
 }

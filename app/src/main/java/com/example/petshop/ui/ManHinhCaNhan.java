@@ -2,16 +2,13 @@ package com.example.petshop.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.view.View;
-import android.widget.PopupMenu;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
 
 import com.example.petshop.R;
 import com.example.petshop.data.DonHang;
@@ -45,7 +42,7 @@ public class ManHinhCaNhan extends AppCompatActivity {
         String tenDangNhap = QuanLyPrefs.layTenDangNhap(this);
         String hoTen = QuanLyPrefs.layHoTen(this);
         if (tenDangNhap.isEmpty()) {
-            tenDangNhap = "Khach";
+            tenDangNhap = "Khách";
         }
         TaiKhoan taiKhoan = DuLieuMau.timTaiKhoanTheoTenDangNhap(tenDangNhap);
         if (hoTen.isEmpty() && taiKhoan != null) {
@@ -61,13 +58,13 @@ public class ManHinhCaNhan extends AppCompatActivity {
         List<DonHang> dsDonHangTheoTaiKhoan = locDonHangTheoTaiKhoan(tenDangNhap);
         if (dsDonHangTheoTaiKhoan.isEmpty()) {
             txtOrders.setVisibility(View.VISIBLE);
-            txtOrders.setText("Chua co don hang nao gan day");
+            txtOrders.setText("Chưa có đơn hàng nào gần đây");
         } else {
             txtOrders.setVisibility(View.GONE);
             hienThiDonHangGanDay(layoutRecentOrders, dsDonHangTheoTaiKhoan);
         }
 
-        btnMenu.setOnClickListener(this::moMenuDieuHuong);
+        btnMenu.setOnClickListener(v -> MenuDieuHuongHelper.moMenuDieuHuong(this, v, R.id.nav_user));
 
         btnLogout.setOnClickListener(v -> {
             QuanLyPrefs.dangXuat(this);
@@ -117,7 +114,7 @@ public class ManHinhCaNhan extends AppCompatActivity {
             tvTien.setTypeface(tvTien.getTypeface(), android.graphics.Typeface.BOLD);
 
             TextView tvPhuongThuc = new TextView(this);
-            tvPhuongThuc.setText("Thanh toan: " + donHang.getPhuongThucThanhToan());
+            tvPhuongThuc.setText("Thanh toán: " + donHang.getPhuongThucThanhToan());
             tvPhuongThuc.setTextSize(13f);
             tvPhuongThuc.setTextColor(0xFF7A7A7A);
             tvPhuongThuc.setPadding(0, 8, 0, 0);
@@ -138,41 +135,5 @@ public class ManHinhCaNhan extends AppCompatActivity {
 
             container.addView(item);
         }
-    }
-
-    private void moMenuDieuHuong(View anchor) {
-        MenuBuilder menuBuilder = new MenuBuilder(this);
-        new PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
-        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
-
-        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
-        menuPopupHelper.setForceShowIcon(true);
-        menuBuilder.setCallback(new MenuBuilder.Callback() {
-            @Override
-            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
-                int id = item.getItemId();
-                if (id == R.id.nav_home || id == R.id.menu_trangchu) {
-                    startActivity(new Intent(ManHinhCaNhan.this, ManHinhChinhActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
-                    startActivity(new Intent(ManHinhCaNhan.this, ManHinhSanPhamActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_cart || id == R.id.menu_giohang) {
-                    startActivity(new Intent(ManHinhCaNhan.this, ManHinhGioHangActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
-                    return true;
-                }
-                return false;
-            }
-
-            @Override
-            public void onMenuModeChange(MenuBuilder menu) {
-            }
-        });
-        menuPopupHelper.show();
     }
 }

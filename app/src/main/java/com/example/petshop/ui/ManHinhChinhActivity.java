@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
 
 import com.example.petshop.R;
 import com.example.petshop.data.DuLieuMau;
@@ -41,16 +38,11 @@ public class ManHinhChinhActivity extends AppCompatActivity {
         View cardPet3 = findViewById(R.id.cardPet3);
         View cardPet4 = findViewById(R.id.cardPet4);
 
-        btnMenu.setOnClickListener(this::moMenuDieuHuong);
-
-        btnKhamPha.setOnClickListener(v ->
-                startActivity(new Intent(this, ManHinhSanPhamActivity.class)));
-
+        btnMenu.setOnClickListener(v -> MenuDieuHuongHelper.moMenuDieuHuong(this, v, R.id.nav_home));
+        btnKhamPha.setOnClickListener(v -> startActivity(new Intent(this, ManHinhSanPhamActivity.class)));
         btnGioiThieu.setOnClickListener(v ->
                 Toast.makeText(this, "Monito - cửa hàng thú cưng", Toast.LENGTH_SHORT).show());
-
-        imgAvatar.setOnClickListener(v ->
-                startActivity(new Intent(this, ManHinhCaNhan.class)));
+        imgAvatar.setOnClickListener(v -> startActivity(new Intent(this, ManHinhCaNhan.class)));
 
         bindSanPhamNoiBat();
         cardPet1.setOnClickListener(v -> moChiTietSanPham(0));
@@ -89,43 +81,5 @@ public class ManHinhChinhActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ManHinhChiTietActivity.class);
         intent.putExtra("vi_tri_san_pham", viTri);
         startActivity(intent);
-    }
-
-    private void moMenuDieuHuong(android.view.View anchor) {
-        MenuBuilder menuBuilder = new MenuBuilder(this);
-        new PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
-        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
-
-        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
-        menuPopupHelper.setForceShowIcon(true);
-        menuBuilder.setCallback(new MenuBuilder.Callback() {
-            @Override
-            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
-                xuLyMenuChung(item.getItemId());
-                return true;
-            }
-
-            @Override
-            public void onMenuModeChange(MenuBuilder menu) {
-            }
-        });
-        menuPopupHelper.show();
-    }
-
-    private void xuLyMenuChung(int itemId) {
-        if (itemId == R.id.nav_home || itemId == R.id.menu_trangchu) {
-            return;
-        }
-        if (itemId == R.id.nav_pet || itemId == R.id.menu_sanpham) {
-            startActivity(new Intent(this, ManHinhSanPhamActivity.class));
-            return;
-        }
-        if (itemId == R.id.nav_cart || itemId == R.id.menu_giohang) {
-            startActivity(new Intent(this, ManHinhGioHangActivity.class));
-            return;
-        }
-        if (itemId == R.id.nav_user || itemId == R.id.menu_taikhoan) {
-            startActivity(new Intent(this, ManHinhCaNhan.class));
-        }
     }
 }

@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -61,12 +58,12 @@ public class ManHinhSanPhamActivity extends AppCompatActivity {
         btnTrangTruoc = findViewById(R.id.btnTrangTruoc);
         btnTrangSau = findViewById(R.id.btnTrangSau);
 
-        btnMenu.setOnClickListener(this::moMenuDieuHuong);
+        btnMenu.setOnClickListener(v -> MenuDieuHuongHelper.moMenuDieuHuong(this, v, R.id.nav_pet));
         btnGioiThieu.setOnClickListener(v ->
                 Toast.makeText(this, "Danh sách sản phẩm thú cưng", Toast.LENGTH_SHORT).show());
         btnKhamPha.setOnClickListener(v -> moSanPhamDauTienTrangHienTai());
         btnBoLoc.setOnClickListener(v ->
-                Toast.makeText(this, "Bộ lọc demo với dữ liệu fix cứng", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "Bộ lọc demo với dữ liệu cố định", Toast.LENGTH_SHORT).show());
 
         khoiTaoDanhSachSanPham();
         khoiTaoPhanTrang();
@@ -153,41 +150,5 @@ public class ManHinhSanPhamActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ManHinhChiTietActivity.class);
         intent.putExtra("vi_tri_san_pham", viTri);
         startActivity(intent);
-    }
-
-    private void moMenuDieuHuong(View anchor) {
-        MenuBuilder menuBuilder = new MenuBuilder(this);
-        new PopupMenu(this, anchor).getMenuInflater().inflate(R.menu.menu_drawer, menuBuilder);
-        MenuDieuHuongHelper.chuanHoaIconMenu(this, menuBuilder);
-
-        MenuPopupHelper menuPopupHelper = new MenuPopupHelper(this, menuBuilder, anchor);
-        menuPopupHelper.setForceShowIcon(true);
-        menuBuilder.setCallback(new MenuBuilder.Callback() {
-            @Override
-            public boolean onMenuItemSelected(MenuBuilder menu, android.view.MenuItem item) {
-                int id = item.getItemId();
-                if (id == R.id.nav_home || id == R.id.menu_trangchu) {
-                    startActivity(new Intent(ManHinhSanPhamActivity.this, ManHinhChinhActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_pet || id == R.id.menu_sanpham) {
-                    return true;
-                }
-                if (id == R.id.nav_cart || id == R.id.menu_giohang) {
-                    startActivity(new Intent(ManHinhSanPhamActivity.this, ManHinhGioHangActivity.class));
-                    return true;
-                }
-                if (id == R.id.nav_user || id == R.id.menu_taikhoan) {
-                    startActivity(new Intent(ManHinhSanPhamActivity.this, ManHinhCaNhan.class));
-                    return true;
-                }
-                return false;
-            }
-
-            @Override
-            public void onMenuModeChange(MenuBuilder menu) {
-            }
-        });
-        menuPopupHelper.show();
     }
 }

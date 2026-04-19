@@ -229,7 +229,7 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_btn_outline"
-                    android:text="Them vao gio"
+                    android:text="Thêm vào giỏ"
                     android:textAllCaps="false"
                     android:textColor="#0B3B68"
                     android:textSize="15sp"
