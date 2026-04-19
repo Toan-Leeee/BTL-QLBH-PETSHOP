@@ -122,8 +122,7 @@ public class ManHinhThanhToanActivity extends AppCompatActivity {
             DuLieuMau.xoaToanBoGioHang();
             Toast.makeText(this, "Dat hang thanh cong: " + donHang.getMaDon(), Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, ManHinhDonHangActivity.class);
-            intent.putExtra("ma_don", donHang.getMaDon());
+            Intent intent = new Intent(this, ManHinhCaNhan.class);
             startActivity(intent);
             finish();
         });

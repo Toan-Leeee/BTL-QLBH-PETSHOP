@@ -21,9 +21,6 @@
             android:name=".ui.ManHinhSanPhamActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ManHinhDonHangActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.ManHinhGioHangActivity"
             android:exported="false" />
         <activity

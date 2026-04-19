@@ -67,10 +67,6 @@ public class ManHinhCaNhan extends AppCompatActivity {
             hienThiDonHangGanDay(layoutRecentOrders, dsDonHangTheoTaiKhoan);
         }
 
-        layoutRecentOrders.setOnClickListener(v ->
-                startActivity(new Intent(this, ManHinhDonHangActivity.class)));
-        txtOrders.setOnClickListener(v ->
-                startActivity(new Intent(this, ManHinhDonHangActivity.class)));
         btnMenu.setOnClickListener(this::moMenuDieuHuong);
 
         btnLogout.setOnClickListener(v -> {
@@ -107,10 +103,6 @@ public class ManHinhCaNhan extends AppCompatActivity {
             LinearLayout item = new LinearLayout(this);
             item.setOrientation(LinearLayout.VERTICAL);
             item.setPadding(0, 0, 0, 18);
-            item.setClickable(true);
-            item.setOnClickListener(v ->
-                    startActivity(new Intent(this, ManHinhDonHangActivity.class)));
-
             TextView tvMa = new TextView(this);
             tvMa.setText(donHang.getMaDon() + " - " + donHang.getTrangThai());
             tvMa.setTextSize(15f);

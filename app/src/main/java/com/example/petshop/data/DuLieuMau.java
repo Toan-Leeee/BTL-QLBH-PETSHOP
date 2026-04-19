@@ -17,7 +17,6 @@ public final class DuLieuMau {
     static {
         khoiTaoSanPham();
         khoiTaoTaiKhoan();
-        khoiTaoDonHang();
     }
 
     private DuLieuMau() {
@@ -66,11 +65,6 @@ public final class DuLieuMau {
                 "user2@petshop.local",
                 "25 Le Loi, Quan Hai Chau, Da Nang"
         ));
-    }
-
-    private static void khoiTaoDonHang() {
-        DS_DON_HANG.add(new DonHang("DH01", "user1", 6900000, "Dang xu ly", "COD"));
-        DS_DON_HANG.add(new DonHang("DH02", "user2", 8500000, "Hoan thanh", "ZaloPay"));
     }
 
     public static List<SanPham> layDanhSachSanPham() {
