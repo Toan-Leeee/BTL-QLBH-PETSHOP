@@ -9,9 +9,9 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuPopupHelper;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.petshop.R;
 import com.example.petshop.data.DuLieuMau;
@@ -47,7 +47,7 @@ public class ManHinhChinhActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ManHinhSanPhamActivity.class)));
 
         btnGioiThieu.setOnClickListener(v ->
-                Toast.makeText(this, "Monito - cua hang thu cung", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "Monito - cửa hàng thú cưng", Toast.LENGTH_SHORT).show());
 
         imgAvatar.setOnClickListener(v ->
                 startActivity(new Intent(this, ManHinhCaNhan.class)));
@@ -80,8 +80,8 @@ public class ManHinhChinhActivity extends AppCompatActivity {
 
         imageView.setImageResource(sanPham.getHinhAnh());
         txtTen.setText(sanPham.getMa() + " - " + sanPham.getTen());
-        txtGiong.setText("Giong: " + sanPham.getGioiTinh());
-        txtTuoi.setText("Tuoi: " + sanPham.getTuoi());
+        txtGiong.setText("Giống: " + sanPham.getGioiTinh());
+        txtTuoi.setText("Tuổi: " + sanPham.getTuoi());
         txtGia.setText(TienIch.dinhDangTien(sanPham.getGia()));
     }
 

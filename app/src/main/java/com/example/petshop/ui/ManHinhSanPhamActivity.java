@@ -63,10 +63,10 @@ public class ManHinhSanPhamActivity extends AppCompatActivity {
 
         btnMenu.setOnClickListener(this::moMenuDieuHuong);
         btnGioiThieu.setOnClickListener(v ->
-                Toast.makeText(this, "Danh sach san pham thu cung", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "Danh sách sản phẩm thú cưng", Toast.LENGTH_SHORT).show());
         btnKhamPha.setOnClickListener(v -> moSanPhamDauTienTrangHienTai());
         btnBoLoc.setOnClickListener(v ->
-                Toast.makeText(this, "Bo loc demo voi du lieu fix cung", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, "Bộ lọc demo với dữ liệu fix cứng", Toast.LENGTH_SHORT).show());
 
         khoiTaoDanhSachSanPham();
         khoiTaoPhanTrang();

@@ -42,8 +42,8 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.VH> {
         SanPham sp = ds.get(position);
 
         h.txtTenSanPham.setText(sp.getMa() + " - " + sp.getTen());
-        h.txtGiong.setText("Giong: " + sp.getGioiTinh());
-        h.txtTuoi.setText("Tuoi: " + sp.getTuoi());
+        h.txtGiong.setText("Giống: " + sp.getGioiTinh());
+        h.txtTuoi.setText("Tuổi: " + sp.getTuoi());
         h.txtGia.setText(TienIch.dinhDangTien(sp.getGia()));
         h.imgSanPham.setImageResource(sp.getHinhAnh());
 

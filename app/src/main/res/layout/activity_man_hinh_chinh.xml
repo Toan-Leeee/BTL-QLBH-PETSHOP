@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginTop="8dp"
-            android:text="Them Mot Ban"
+            android:text="Thêm Một Bạn"
             android:textColor="#002B5B"
             android:textSize="28sp"
             android:textStyle="bold" />
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginTop="2dp"
-            android:text="Them Ngan Niem Vui!"
+            android:text="Thêm Ngàn Niềm Vui!"
             android:textColor="#002B5B"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -96,7 +96,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="18dp"
             android:lineSpacingExtra="2dp"
-            android:text="Co mot con thu cung dong nghia voi viec ban co them niem vui moi. Chung toi co hon 200 con thu cung khoe manh de dap ung nhu cau cua ban!"
+            android:text="Có một con thú cưng đồng nghĩa với việc bạn có thêm niềm vui mới. Chúng tôi có hơn 200 con thú cưng khỏe mạnh để đáp ứng nhu cầu của bạn!"
             android:textColor="#2D2D2D"
             android:textSize="11sp" />
 
@@ -113,7 +113,7 @@
                 android:layout_width="123dp"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_outline"
-                android:text="Gioi Thieu"
+                android:text="Giới Thiệu"
                 android:textAllCaps="false"
                 android:textColor="#0B3B68"
                 android:textSize="12sp" />
@@ -124,7 +124,7 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:background="@drawable/bg_register_button"
-                android:text="Kham Pha Ngay"
+                android:text="Khám Phá Ngay"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
@@ -167,7 +167,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
-            android:text="Co gi moi?"
+            android:text="Có gì mới?"
             android:textColor="#555555"
             android:textSize="12sp" />
 
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="Mot So Vat Nuoi Cua Chung Toi"
+            android:text="Một Số Vật Nuôi Của Chúng Tôi"
             android:textColor="#0B3B68"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -431,7 +431,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
-            android:text="Ban co the can"
+            android:text="Bạn có thể cần"
             android:textColor="#555555"
             android:textSize="12sp" />
 
@@ -440,7 +440,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="Kien thuc thu cung Huu Ich"
+            android:text="Kiến thức thú cưng Hữu Ích"
             android:textColor="#0B3B68"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -466,7 +466,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Kien thuc thu cung"
+                android:text="Kiến thức thú cưng"
                 android:textColor="#0B3B68"
                 android:textSize="11sp"
                 android:textStyle="bold" />
@@ -475,7 +475,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Nhung dieu can biet khi cham soc cho con moi ve nha"
+                android:text="Những điều cần biết khi chăm sóc chó con mới về nhà"
                 android:textColor="#222222"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -484,7 +484,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Chuan bi cho ngu, thuc an, ve sinh va thoi gian lam quen de be thich nghi tot hon."
+                android:text="Chuẩn bị chỗ ngủ, thức ăn, vệ sinh và thời gian làm quen để bé thích nghi tốt hơn."
                 android:textColor="#666666"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -510,7 +510,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Kien thuc thu cung"
+                android:text="Kiến thức thú cưng"
                 android:textColor="#0B3B68"
                 android:textSize="11sp"
                 android:textStyle="bold" />
@@ -519,7 +519,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Che do dinh duong phu hop cho tung giong cho"
+                android:text="Chế độ dinh dưỡng phù hợp cho từng giống chó"
                 android:textColor="#222222"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -528,7 +528,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Chon khau phan theo do tuoi, can nang va muc van dong de thu cung phat trien khoe manh."
+                android:text="Chọn khẩu phần theo độ tuổi, cân nặng và mức vận động để thú cưng phát triển khỏe mạnh."
                 android:textColor="#666666"
                 android:textSize="12sp" />
         </LinearLayout>
